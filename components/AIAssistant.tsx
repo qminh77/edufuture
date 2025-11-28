@@ -64,7 +64,15 @@ const AIAssistant: React.FC = () => {
 
     try {
       const result = await chatSession.sendMessage({ message: userMsg });
-      const responseText = result.text;
+      let responseText = result.text;
+      
+      // Remove markdown formatting (**, *, #, etc.)
+      responseText = responseText
+        .replace(/\*\*(.+?)\*\*/g, '$1')  // Remove bold **text**
+        .replace(/\*(.+?)\*/g, '$1')      // Remove italic *text*
+        .replace(/^#+\s+/gm, '')            // Remove headers
+        .replace(/\n- /g, '\n• ')          // Convert - to •
+        .trim();
       
       setMessages(prev => [...prev, { role: 'model', text: responseText }]);
     } catch (error) {
@@ -83,7 +91,7 @@ const AIAssistant: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-auto font-sans">
+    <div className="fixed bottom-24 right-6 z-40 flex flex-col items-end pointer-events-auto font-sans">
       
       {/* Toggle Button */}
       {!isOpen && (

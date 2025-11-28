@@ -12,7 +12,7 @@ const Controls: React.FC<ControlsProps> = ({ currentSlide, totalSlides, onNext, 
   const progress = ((currentSlide + 1) / totalSlides) * 100;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 p-6 md:p-8 flex justify-between items-end pointer-events-none">
+    <div className="fixed bottom-0 left-0 right-0 z-30 p-6 md:p-8 flex justify-between items-end pointer-events-none">
       
       {/* Slide Indicator Number */}
       <div className="flex flex-col gap-2">
