@@ -72,19 +72,19 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
 
   // 1. HERO: Centered, Massive Impact
   const renderHero = () => (
-    <div className="flex flex-col items-center justify-center text-center h-full relative z-10 p-4">
+    <div className="flex flex-col items-center justify-center text-center h-full relative z-10 p-4 sm:p-6">
       <motion.div 
         initial={{ opacity: 0 }} 
         animate={{ opacity: 1 }} 
         transition={{ duration: 1 }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-neon-cyan/10 to-neon-purple/10 rounded-full blur-3xl -z-10" 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] md:w-[800px] md:h-[800px] bg-gradient-to-r from-neon-cyan/10 to-neon-purple/10 rounded-full blur-3xl -z-10" 
       />
 
       <motion.div 
         variants={titleVariants}
         initial="hidden"
         animate="visible"
-        className={`font-mono text-sm md:text-base tracking-[0.5em] mb-8 uppercase ${getTailwindColor().split(' ')[0]} bg-black/40 backdrop-blur-sm px-4 py-1 rounded`}
+        className={`font-mono text-xs sm:text-sm md:text-base tracking-[0.3em] sm:tracking-[0.5em] mb-4 sm:mb-8 uppercase ${getTailwindColor().split(' ')[0]} bg-black/40 backdrop-blur-sm px-3 sm:px-4 py-1 rounded`}
       >
         [{data.subtitle}]
       </motion.div>
@@ -93,7 +93,7 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
         initial={{ scale: 0.8, opacity: 0, filter: 'blur(10px)' }}
         animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="font-display text-5xl md:text-8xl font-black uppercase text-white mb-12 leading-tight tracking-tight relative z-20"
+        className="font-display text-3xl sm:text-5xl md:text-8xl font-black uppercase text-white mb-6 sm:mb-12 leading-tight tracking-tight relative z-20"
         style={{ textShadow: `0 0 50px ${getAccentColor(0.5)}` }}
       >
         {data.title}
@@ -101,9 +101,9 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
         <span className={`absolute -left-8 top-0 h-full w-1 ${getTailwindColor().split(' ')[1].replace('border', 'bg')}`} />
       </motion.h1>
 
-      <motion.div variants={containerVariants} initial="hidden" animate="visible" className="space-y-4 bg-black/30 backdrop-blur-sm p-6 rounded-xl border border-white/5 inline-block">
+      <motion.div variants={containerVariants} initial="hidden" animate="visible" className="space-y-2 sm:space-y-4 bg-black/30 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-white/5 inline-block">
          {data.content.map((item, i) => (
-             <motion.p key={i} variants={itemVariants} className="font-sans text-xl md:text-2xl text-slate-100 font-light max-w-2xl mx-auto drop-shadow-md">
+             <motion.p key={i} variants={itemVariants} className="font-sans text-sm sm:text-lg md:text-2xl text-slate-100 font-light max-w-2xl mx-auto drop-shadow-md">
                  {item}
              </motion.p>
          ))}
@@ -113,31 +113,31 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
 
   // 2. DATA GRID: Split with Large Stat
   const renderDataGrid = () => (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 h-full items-center p-8 lg:p-16 w-full max-w-[1600px] mx-auto z-10 relative">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 h-full items-center p-4 sm:p-8 lg:p-16 w-full max-w-[1600px] mx-auto z-10 relative">
        {/* Left: Data Stream */}
-       <div className="lg:col-span-7 order-2 lg:order-1 bg-black/40 backdrop-blur-md p-8 rounded-xl border border-white/5 shadow-2xl">
-          <motion.div variants={titleVariants} initial="hidden" animate="visible" className="mb-8">
-              <div className="flex items-center gap-3 mb-2 opacity-100">
-                  <Activity size={18} color={getAccentColor()} />
+       <div className="lg:col-span-7 order-2 lg:order-1 bg-black/40 backdrop-blur-md p-4 sm:p-8 rounded-xl border border-white/5 shadow-2xl">
+          <motion.div variants={titleVariants} initial="hidden" animate="visible" className="mb-4 sm:mb-8">
+              <div className="flex items-center gap-2 sm:gap-3 mb-2 opacity-100">
+                  <Activity size={16} className="sm:w-[18px] sm:h-[18px]" color={getAccentColor()} />
                   <span className="font-mono text-xs text-slate-300">ANALYSIS_MODE</span>
               </div>
-              <h2 className="font-display text-4xl md:text-6xl text-white font-bold uppercase mb-4 drop-shadow-lg">{data.title}</h2>
-              <div className={`h-0.5 w-32 ${getTailwindColor().split(' ')[1].replace('border', 'bg')}`} />
+              <h2 className="font-display text-2xl sm:text-4xl md:text-6xl text-white font-bold uppercase mb-2 sm:mb-4 drop-shadow-lg">{data.title}</h2>
+              <div className={`h-0.5 w-20 sm:w-32 ${getTailwindColor().split(' ')[1].replace('border', 'bg')}`} />
           </motion.div>
 
           <motion.div 
             variants={containerVariants} 
             initial="hidden" 
             animate="visible" 
-            className="grid gap-6"
+            className="grid gap-3 sm:gap-6"
           >
               {data.content.map((item, i) => (
-                  <motion.div key={i} variants={itemVariants} className="flex items-center gap-4 group">
-                      <span className={`font-mono text-lg ${getTailwindColor().split(' ')[0]}`}>
+                  <motion.div key={i} variants={itemVariants} className="flex items-center gap-2 sm:gap-4 group">
+                      <span className={`font-mono text-xs sm:text-lg ${getTailwindColor().split(' ')[0]}`}>
                         {String(i + 1).padStart(2, '0')}
                       </span>
                       <div className="h-full w-[1px] bg-slate-600 group-hover:bg-slate-400 transition-colors" />
-                      <p className="font-sans text-xl text-slate-200 group-hover:text-white transition-colors">
+                      <p className="font-sans text-sm sm:text-lg md:text-xl text-slate-200 group-hover:text-white transition-colors">
                         {item}
                       </p>
                   </motion.div>
@@ -151,22 +151,22 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
             variants={panelVariants}
             initial="hidden"
             animate="visible"
-            className="relative border border-slate-700/50 bg-slate-900/60 backdrop-blur-md p-8 rounded-sm shadow-2xl"
+            className="relative border border-slate-700/50 bg-slate-900/60 backdrop-blur-md p-4 sm:p-8 rounded-sm shadow-2xl"
           >
              {/* HUD Corners */}
-             <div className={`absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 ${getTailwindColor().split(' ')[1]}`} />
-             <div className={`absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 ${getTailwindColor().split(' ')[1]}`} />
+             <div className={`absolute top-0 left-0 w-3 sm:w-4 h-3 sm:h-4 border-t-2 border-l-2 ${getTailwindColor().split(' ')[1]}`} />
+             <div className={`absolute bottom-0 right-0 w-3 sm:w-4 h-3 sm:h-4 border-b-2 border-r-2 ${getTailwindColor().split(' ')[1]}`} />
 
              {data.stat && (
                  <div className="text-center z-10 relative">
                     <motion.div 
                         initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.5, type: "spring" }}
-                        className={`font-display text-7xl md:text-8xl font-black ${getTailwindColor().split(' ')[0]}`}
+                        className={`font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black ${getTailwindColor().split(' ')[0]}`}
                         style={{ textShadow: `0 0 30px ${getAccentColor(0.4)}`}}
                     >
                         {data.stat}
                     </motion.div>
-                    <p className="font-mono text-sm text-slate-300 mt-2 tracking-widest">KEY_METRIC_DETECTED</p>
+                    <p className="font-mono text-xs text-slate-300 mt-2 tracking-widest">KEY_METRIC_DETECTED</p>
                  </div>
              )}
              
@@ -185,28 +185,28 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
 
   // 3. HOLOGRAM: Central Focus with Floating Elements
   const renderHologram = () => (
-    <div className="flex flex-col items-center justify-center h-full max-w-6xl mx-auto px-6 z-10 relative">
-        <motion.div variants={titleVariants} initial="hidden" animate="visible" className="text-center mb-16 bg-black/30 backdrop-blur-md p-8 rounded-2xl border border-white/5">
-            <span className={`inline-block py-1 px-3 mb-6 border ${getTailwindColor()} rounded-full font-mono text-xs`}>
+    <div className="flex flex-col items-center justify-center h-full max-w-6xl mx-auto px-4 sm:px-6 z-10 relative">
+        <motion.div variants={titleVariants} initial="hidden" animate="visible" className="text-center mb-8 sm:mb-16 bg-black/30 backdrop-blur-md p-4 sm:p-8 rounded-2xl border border-white/5">
+            <span className={`inline-block py-1 px-2 sm:px-3 mb-3 sm:mb-6 border ${getTailwindColor()} rounded-full font-mono text-xs`}>
                 SYSTEM_DEFINITION
             </span>
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-xl">{data.title}</h1>
-            <p className={`font-mono text-xl ${getTailwindColor().split(' ')[0]}`}>{data.subtitle}</p>
+            <h1 className="font-display text-2xl sm:text-5xl md:text-7xl font-bold text-white mb-2 sm:mb-4 drop-shadow-xl">{data.title}</h1>
+            <p className={`font-mono text-xs sm:text-lg md:text-xl ${getTailwindColor().split(' ')[0]}`}>{data.subtitle}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-8 w-full">
             {data.content.map((item, i) => (
                 <motion.div
                     key={i}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.15 + 0.5 }}
-                    className="relative bg-slate-900/60 border border-slate-700 p-6 hover:border-neon-cyan/50 transition-colors group backdrop-blur-md rounded-lg shadow-lg"
+                    className="relative bg-slate-900/60 border border-slate-700 p-3 sm:p-6 hover:border-neon-cyan/50 transition-colors group backdrop-blur-md rounded-lg shadow-lg"
                 >
                     <div className={`absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-${data.accent === 'cyan' ? 'neon-cyan' : 'neon-purple'} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                    <div className="flex items-start gap-4">
-                        <Target className={`mt-1 shrink-0 ${getTailwindColor().split(' ')[0]}`} size={20} />
-                        <p className="font-sans text-lg text-slate-100 font-medium">{item}</p>
+                    <div className="flex items-start gap-2 sm:gap-4">
+                        <Target className={`mt-1 shrink-0 w-4 h-4 sm:w-5 sm:h-5 ${getTailwindColor().split(' ')[0]}`} />
+                        <p className="font-sans text-xs sm:text-lg md:text-lg text-slate-100 font-medium">{item}</p>
                     </div>
                 </motion.div>
             ))}
