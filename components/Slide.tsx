@@ -77,14 +77,14 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
         initial={{ opacity: 0 }} 
         animate={{ opacity: 1 }} 
         transition={{ duration: 1 }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] md:w-[800px] md:h-[800px] bg-gradient-to-r from-neon-cyan/10 to-neon-purple/10 rounded-full blur-3xl -z-10" 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] bg-gradient-to-r from-neon-cyan/10 to-neon-purple/10 rounded-full blur-3xl -z-10" 
       />
 
       <motion.div 
         variants={titleVariants}
         initial="hidden"
         animate="visible"
-        className={`font-mono text-xs sm:text-sm md:text-base tracking-[0.3em] sm:tracking-[0.5em] mb-4 sm:mb-8 uppercase ${getTailwindColor().split(' ')[0]} bg-black/40 backdrop-blur-sm px-3 sm:px-4 py-1 rounded`}
+        className={`font-mono text-xs sm:text-sm md:text-base tracking-[0.3em] sm:tracking-[0.5em] mb-3 sm:mb-6 uppercase ${getTailwindColor().split(' ')[0]} bg-black/40 backdrop-blur-sm px-3 sm:px-4 py-1 rounded`}
       >
         [{data.subtitle}]
       </motion.div>
@@ -93,7 +93,7 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
         initial={{ scale: 0.8, opacity: 0, filter: 'blur(10px)' }}
         animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="font-display text-3xl sm:text-5xl md:text-8xl font-black uppercase text-white mb-6 sm:mb-12 leading-tight tracking-tight relative z-20"
+        className="font-display text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase text-white mb-4 sm:mb-8 leading-tight tracking-tight relative z-20"
         style={{ textShadow: `0 0 50px ${getAccentColor(0.5)}` }}
       >
         {data.title}
@@ -101,9 +101,9 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
         <span className={`absolute -left-8 top-0 h-full w-1 ${getTailwindColor().split(' ')[1].replace('border', 'bg')}`} />
       </motion.h1>
 
-      <motion.div variants={containerVariants} initial="hidden" animate="visible" className="space-y-2 sm:space-y-4 bg-black/30 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-white/5 inline-block">
+      <motion.div variants={containerVariants} initial="hidden" animate="visible" className="space-y-2 sm:space-y-3 bg-black/30 backdrop-blur-sm p-3 sm:p-4 rounded-xl border border-white/5 inline-block">
          {data.content.map((item, i) => (
-             <motion.p key={i} variants={itemVariants} className="font-sans text-sm sm:text-lg md:text-2xl text-slate-100 font-light max-w-2xl mx-auto drop-shadow-md">
+             <motion.p key={i} variants={itemVariants} className="font-sans text-xs sm:text-base md:text-lg text-slate-100 font-light max-w-2xl mx-auto drop-shadow-md">
                  {item}
              </motion.p>
          ))}
@@ -216,34 +216,32 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
 
     // 4. FOCUS: Minimalist, heavy typography, background image heavy
   const renderFocus = () => (
-      <div className="w-full h-full flex flex-col justify-center px-8 md:px-24 relative overflow-hidden">
+      <div className="w-full h-full flex flex-col justify-center px-6 sm:px-12 md:px-20 relative overflow-hidden">
            {/* Background Image - Improved Visibility */}
            {data.image && (
                <>
                 <div className="absolute inset-0 z-0">
-                    <img src={data.image} className="w-full h-full object-cover opacity-40" alt="" />
+                    <img src={data.image} className="w-full h-full object-cover opacity-30" alt="" />
                     {/* Gradient Overlay to ensure text readability */}
                     <div className="absolute inset-0 bg-gradient-to-r from-void via-void/80 to-transparent" />
                 </div>
                </>
            )}
 
-           <motion.div variants={titleVariants} initial="hidden" animate="visible" className="z-10 max-w-4xl relative">
-               <h2 className="font-mono text-sm text-neon-cyan mb-4 tracking-[0.2em] flex items-center gap-2 font-bold">
+           <motion.div variants={titleVariants} initial="hidden" animate="visible" className="z-10 max-w-3xl relative">
+               <h2 className="font-mono text-xs sm:text-sm text-neon-cyan mb-3 sm:mb-4 tracking-[0.2em] flex items-center gap-2 font-bold">
                    <Globe size={14} />
                    {data.subtitle}
                </h2>
-               <h1 className="font-display text-6xl md:text-8xl font-black text-white uppercase mb-12 leading-[0.9] drop-shadow-2xl">
-                   {data.title.split(' ').map((word, i) => (
-                       <span key={i} className="block">{word}</span>
-                   ))}
+               <h1 className="font-display text-3xl sm:text-5xl md:text-6xl font-black text-white uppercase mb-8 sm:mb-12 leading-tight drop-shadow-2xl">
+                   {data.title}
                </h1>
            </motion.div>
 
-           <motion.div variants={containerVariants} initial="hidden" animate="visible" className="z-10 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 max-w-5xl bg-black/40 backdrop-blur-sm p-4 sm:p-6 rounded-lg border-l-4 border-neon-cyan">
+           <motion.div variants={containerVariants} initial="hidden" animate="visible" className="z-10 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 max-w-3xl bg-black/40 backdrop-blur-sm p-4 sm:p-6 rounded-lg border-l-4 border-neon-cyan">
                {data.content.map((item, i) => (
                    <motion.div key={i} variants={itemVariants} className="pl-2 py-2">
-                       <p className="font-sans text-sm sm:text-base md:text-lg text-slate-100 font-medium leading-snug">
+                       <p className="font-sans text-xs sm:text-sm md:text-base text-slate-100 font-medium leading-snug">
                            {item}
                        </p>
                    </motion.div>
@@ -336,13 +334,13 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
                initial={{ opacity: 0, y: -20 }} 
                animate={{ opacity: 1, y: 0 }} 
                transition={{ delay: 0.2 }}
-               className={`font-mono text-xs sm:text-sm mb-6 sm:mb-8 tracking-[0.2em] uppercase ${getTailwindColor().split(' ')[0]}`}
+               className={`font-mono text-xs sm:text-sm mb-4 sm:mb-6 tracking-[0.2em] uppercase ${getTailwindColor().split(' ')[0]}`}
              >
                {data.subtitle}
              </motion.div>
 
              {/* Main Question/Content */}
-             <div className="space-y-6 sm:space-y-8">
+             <div className="space-y-3 sm:space-y-4">
                  {allContent.map((item, i) => (
                      <motion.div
                        key={i}
@@ -351,7 +349,7 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
                        transition={{ delay: 0.3 + (i * 0.15) }}
                        className="relative"
                      >
-                         <p className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-tight drop-shadow-lg">
+                         <p className="font-display text-lg sm:text-3xl md:text-4xl lg:text-5xl text-white font-bold leading-tight drop-shadow-lg">
                              {item}
                          </p>
                      </motion.div>
@@ -363,7 +361,7 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
                initial={{ opacity: 0 }} 
                animate={{ opacity: 1 }} 
                transition={{ delay: 0.8 }}
-               className="mt-12 sm:mt-16 flex items-center justify-center gap-2 text-slate-300 font-mono text-xs sm:text-sm"
+               className="mt-8 sm:mt-12 flex items-center justify-center gap-2 text-slate-300 font-mono text-xs sm:text-sm"
              >
                  <motion.div 
                    animate={{ scale: [1, 1.2, 1] }} 

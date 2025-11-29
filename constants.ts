@@ -7,7 +7,7 @@ export const PRESENTATION_DATA: SlideData[] = [
     title: "AI IS CHANGING THE WAY HUMANS LEARN",
     subtitle: "Presentation Overview",
     content: ["Group 8", "Instructor: Nguyen Thi Viet Trinh"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1920&auto=format&fit=crop",
+    image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
     layout: 'hero',
     accent: 'cyan'
   },
@@ -22,7 +22,7 @@ export const PRESENTATION_DATA: SlideData[] = [
       "AI is not the future—it is the present."
     ],
     stat: "86%",
-    image: "https://images.unsplash.com/photo-1633356122544-f134324ef6db?q=80&w=1920&auto=format&fit=crop",
+    image: "https://images.pexels.com/photos/8566555/pexels-photo-8566555.jpeg",
     layout: 'data-grid',
     accent: 'cyan'
   },
@@ -33,7 +33,7 @@ export const PRESENTATION_DATA: SlideData[] = [
     content: [
       "Has anyone here ever copied an answer from ChatGPT and pasted it straight into an assignment... without even reading it first?"
     ],
-    image: "https://images.unsplash.com/photo-1676995261999-fcd71540dd62?q=80&w=1920&auto=format&fit=crop",
+    image: "https://images.pexels.com/photos/3587478/pexels-photo-3587478.jpeg",
     layout: 'interaction',
     accent: 'amber'
   },
@@ -48,7 +48,7 @@ export const PRESENTATION_DATA: SlideData[] = [
       "✓ Auto-Adjusts Difficulty",
       "✓ Available 24/7 Support"
     ],
-    image: "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=1920&auto=format&fit=crop",
+    image: "https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg",
     layout: 'hologram',
     accent: 'cyan'
   },
@@ -62,7 +62,7 @@ export const PRESENTATION_DATA: SlideData[] = [
       "Instant Feedback: Correct errors immediately",
       "Gamification: Make learning fun & engaging"
     ],
-    image: "https://images.unsplash.com/photo-1639149888905-46cd2ae58a10?q=80&w=1920&auto=format&fit=crop",
+    image: "https://images.pexels.com/photos/8566472/pexels-photo-8566472.jpeg",
     layout: 'focus',
     accent: 'pink'
   },
@@ -73,7 +73,7 @@ export const PRESENTATION_DATA: SlideData[] = [
     content: [
       "Has anyone here ever felt genuinely guilty or panicked because you lost your streak on Duolingo?"
     ],
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1920&auto=format&fit=crop",
+    image: "https://images.pexels.com/photos/3808517/pexels-photo-3808517.jpeg",
     layout: 'interaction',
     accent: 'amber'
   },
@@ -88,7 +88,7 @@ export const PRESENTATION_DATA: SlideData[] = [
       "Proof: Duolingo shows 50% faster learning"
     ],
     stat: "50% FASTER",
-    image: "https://images.unsplash.com/photo-1657744527454-a21ef4d3f63a?q=80&w=1920&auto=format&fit=crop",
+    image: "https://images.pexels.com/photos/8566472/pexels-photo-8566472.jpeg",
     layout: 'data-grid',
     accent: 'cyan'
   },
@@ -99,7 +99,7 @@ export const PRESENTATION_DATA: SlideData[] = [
     content: [
       "Have you ever sat in class too afraid to ask questions, but have no problem asking ChatGPT ten questions in a row?"
     ],
-    image: "https://images.unsplash.com/photo-1677853550544-cbf45901882f?q=80&w=1920&auto=format&fit=crop",
+    image: "https://images.pexels.com/photos/3808517/pexels-photo-3808517.jpeg",
     layout: 'interaction',
     accent: 'amber'
   },
@@ -112,7 +112,7 @@ export const PRESENTATION_DATA: SlideData[] = [
       "⚠ Academic Cheating: Tools for writing, tools for detecting",
       "⚠ Inequality: Rich move ahead, poor fall behind"
     ],
-    image: "https://images.unsplash.com/photo-1666618328472-81ee820f1a1a?q=80&w=1920&auto=format&fit=crop",
+    image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
     layout: 'hologram',
     accent: 'pink'
   },
@@ -125,7 +125,7 @@ export const PRESENTATION_DATA: SlideData[] = [
       "Option B: The ability to ask the right questions.",
       "Which one matters more in the AI era?"
     ],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1920&auto=format&fit=crop",
+    image: "https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg",
     layout: 'interaction',
     accent: 'amber'
   },
@@ -139,7 +139,7 @@ export const PRESENTATION_DATA: SlideData[] = [
       "Teachers Become Mentors (inspire, not lecture)",
       "Human + AI = Better Education"
     ],
-    image: "https://images.unsplash.com/photo-1674611941836-d19021ba8fcb?q=80&w=1920&auto=format&fit=crop",
+    image: "https://images.pexels.com/photos/3808517/pexels-photo-3808517.jpeg",
     layout: 'focus',
     accent: 'cyan'
   },
@@ -152,7 +152,7 @@ export const PRESENTATION_DATA: SlideData[] = [
       "Option 2: Passionate human teacher free only one hour a week.",
       "Who would you choose?"
     ],
-    image: "https://images.unsplash.com/photo-1677853550544-cbf45901882f?q=80&w=1920&auto=format&fit=crop",
+    image: "https://images.pexels.com/photos/3587478/pexels-photo-3587478.jpeg",
     layout: 'interaction',
     accent: 'amber'
   },
@@ -165,7 +165,7 @@ export const PRESENTATION_DATA: SlideData[] = [
       "2. AI brings opportunities AND risks—how we use it matters",
       "3. Future: Humans + AI working together, not against each other"
     ],
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1920&auto=format&fit=crop",
+    image: "https://images.pexels.com/photos-3945683/pexels-photo-3945683.jpeg",
     layout: 'hero',
     accent: 'purple'
   },
@@ -178,7 +178,7 @@ export const PRESENTATION_DATA: SlideData[] = [
       "It is Humans plus AI—and that is stronger than either one standing alone.",
       "Thank you for your time and attention."
     ],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1920&auto=format&fit=crop",
+    image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
     layout: 'hero',
     accent: 'cyan'
   }
