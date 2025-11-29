@@ -5,7 +5,7 @@ export const PRESENTATION_DATA: SlideData[] = [
   {
     id: 1,
     title: "AI IS CHANGING THE WAY HUMANS LEARN",
-    subtitle: "SYSTEM INITIALIZED // 2025",
+    subtitle: "Presentation Overview",
     content: ["Group 8", "Instructor: Nguyen Thi Viet Trinh"],
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1920&auto=format&fit=crop",
     layout: 'hero',
@@ -13,27 +13,26 @@ export const PRESENTATION_DATA: SlideData[] = [
   },
   {
     id: 2,
-    title: "THE REALITY CHECK",
-    subtitle: "MARKET ANALYSIS // CRITICAL DATA",
+    title: "INTRODUCTION",
+    subtitle: "Why This Matters Right Now",
     content: [
-      "Traditional Education: Static. Linear. Outdated.",
-      "92% College Adoption Rate (ChatGPT)",
-      "86% Institutional Integration",
-      "STATUS: AI is not pending. It is active."
+      "Why do some students do well while others struggle... even with the same teacher? Because everyone learns at a different speed and in a different way.",
+      "Twenty years ago, that was just reality. Today, AI is completely changing that.",
+      "Market Growth: 86% of students are already using AI in their studies. The market is projected to grow by over 30% annually.",
+      "AI is not the future—it is the present."
     ],
-    stat: "+46% GROWTH",
+    stat: "86%",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1920&auto=format&fit=crop",
     layout: 'data-grid',
-    accent: 'purple'
+    accent: 'cyan'
   },
-  // Q3: Honesty (Ice-breaker)
   {
     id: 3,
-    title: "THE HONESTY PROTOCOL",
-    subtitle: "INTERACTION_MODE // ICE_BREAKER",
+    title: "THE HONESTY QUESTION",
+    subtitle: "Let's Be Real",
     content: [
-      "QUESTION:",
-      "\"Be honest—and I promise I won't tell your teachers—but has anyone here ever copied an answer from ChatGPT and pasted it straight into an assignment... without even reading it first?\""
+      "Be honest—and I promise I won't tell your teachers—but has anyone here ever copied an answer from ChatGPT and pasted it straight into an assignment... without even reading it first?",
+      "This question reveals a truth about how AI is being used today, for better or worse."
     ],
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1920&auto=format&fit=crop",
     layout: 'interaction',
@@ -41,13 +40,14 @@ export const PRESENTATION_DATA: SlideData[] = [
   },
   {
     id: 4,
-    title: "SYSTEM DEFINITION",
-    subtitle: "WHAT IS AI EDUCATION?",
+    title: "WHAT IS AI IN EDUCATION?",
+    subtitle: "Five Key Capabilities",
     content: [
-      ">> UNDERSTANDS: Speed & struggle pattern recognition.",
-      ">> PERSONALIZES: Content adaptation algorithms.",
-      ">> CORRECTS: Zero-latency feedback loop.",
-      ">> ANALOGY: Infinite-scale private tutoring."
+      "Understands How You Learn: Tracks what you do right, what you struggle with, and your progress speed.",
+      "Personalizes Content: Adjusts difficulty and topics based on your ability and learning style.",
+      "Provides Instant Feedback: Corrects mistakes immediately—not tomorrow, but right now.",
+      "Auto-Adjusts Difficulty: Changes the level as you improve.",
+      "Available 24/7: Never tired, never too busy, always ready to help."
     ],
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1920&auto=format&fit=crop",
     layout: 'hologram',
@@ -55,26 +55,25 @@ export const PRESENTATION_DATA: SlideData[] = [
   },
   {
     id: 5,
-    title: "CORE TRANSFORMATION",
-    subtitle: "FOUR VECTORS OF CHANGE",
+    title: "FOUR REVOLUTIONARY CHANGES",
+    subtitle: "How AI is Transforming Learning",
     content: [
-      "[1] HYPER-PERSONALIZATION: Tailored neural paths.",
-      "[2] ON-DEMAND ACCESS: Temporal freedom.",
-      "[3] INSTANT FEEDBACK: Error correction protocols.",
-      "[4] GAMIFICATION: Dopamine-driven learning."
+      "Personalization: Instead of 'one textbook for everyone,' AI creates a unique path for each person. Excel in a subject? Learn advanced topics. Need help? Review the basics.",
+      "Learning On Demand: Study at midnight, on the bus, or anywhere. No more time or geography barriers.",
+      "Instant Feedback: Mistakes are corrected immediately while the knowledge is still fresh.",
+      "Gamification: Learning becomes engaging and fun with game mechanics to keep you motivated."
     ],
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1920&auto=format&fit=crop",
     layout: 'focus',
     accent: 'pink'
   },
-  // Q5: Gamification
   {
     id: 6,
-    title: "DOPAMINE CHECK",
-    subtitle: "INTERACTION_MODE // GAMIFICATION",
+    title: "THE DUOLINGO QUESTION",
+    subtitle: "A Quick Reality Check",
     content: [
-      "QUERY:",
-      "\"Has anyone here ever felt genuinely guilty or panicked just because you forgot to study one day and lost your streak on Duolingo?\""
+      "Has anyone here ever felt genuinely guilty or panicked just because you forgot to study one day and lost your streak on Duolingo?",
+      "This shows how gamification can motivate us—for better or worse."
     ],
     image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1920&auto=format&fit=crop",
     layout: 'interaction',
@@ -82,27 +81,26 @@ export const PRESENTATION_DATA: SlideData[] = [
   },
   {
     id: 7,
-    title: "USER ADVANTAGES",
-    subtitle: "OPTIMIZATION METRICS",
+    title: "THE REAL BENEFITS",
+    subtitle: "What AI Learning Actually Delivers",
     content: [
-      "ACCELERATION: Bypass known nodes. Focus on gaps.",
-      "RETENTION: Spaced repetition algorithms.",
-      "CONFIDENCE: Psychological safety. No judgment.",
-      "ITERATION: Fail faster. Learn faster."
+      "For Learners: We learn faster because AI skips what we already know. We remember longer through smart review reminders. Most importantly—we feel more confident. You can ask AI the same question 100 times without judgment or embarrassment.",
+      "For Society: Students in poor or remote areas finally access high-quality education they never had before.",
+      "For Teachers: No more endless grading. Teachers can focus on what truly matters: inspiring and guiding students.",
+      "The Proof: Duolingo research shows students reach university-level proficiency in half the time using AI-adaptive learning."
     ],
+    stat: "50% FASTER",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920&auto=format&fit=crop",
-    layout: 'terminal',
+    layout: 'data-grid',
     accent: 'cyan'
   },
-  // Q1: Confidence
   {
     id: 8,
-    title: "PSYCHOLOGICAL SAFETY",
-    subtitle: "INTERACTION_MODE // CONFIDENCE",
+    title: "THE CONFIDENCE FACTOR",
+    subtitle: "Why AI Creates Psychological Safety",
     content: [
-      "SCENARIO:",
-      "\"Have you ever sat in class, confused, but too afraid to raise your hand to avoid looking 'stupid'...",
-      "...yet you have no problem asking ChatGPT ten questions in a row?\""
+      "Have you ever sat in class, completely confused, but too afraid to raise your hand because you didn't want to look 'stupid'... yet when you get home, you have no problem asking ChatGPT ten questions in a row?",
+      "This difference matters. AI removes the fear of judgment."
     ],
     image: "https://images.unsplash.com/photo-1504253163759-c23f7d9d6e0d?q=80&w=1920&auto=format&fit=crop",
     layout: 'interaction',
@@ -110,99 +108,80 @@ export const PRESENTATION_DATA: SlideData[] = [
   },
   {
     id: 9,
-    title: "SOCIETAL IMPACT",
-    subtitle: "GLOBAL SCALABILITY",
+    title: "THE RISKS WE CAN'T IGNORE",
+    subtitle: "Three Major Concerns",
     content: [
-      "ACCESS: Democratizing Tier-1 knowledge.",
-      "TEACHERS: Automation of administrative tasks.",
-      "EFFICIENCY: +40% Learning Velocity (Duolingo Data).",
-      "MISSION: Closing the intelligence gap."
-    ],
-    stat: "40% FASTER",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop",
-    layout: 'data-grid',
-    accent: 'purple'
-  },
-  {
-    id: 10,
-    title: "SYSTEM VULNERABILITIES",
-    subtitle: "RISK ASSESSMENT",
-    content: [
-      "WARNING: Cognitive Atrophy (The 'Laziness' Trap).",
-      "WARNING: Hallucination / False Data Injection.",
-      "WARNING: Academic Integrity Breach (+400%).",
-      "MITIGATION: Integrity Protocols Required."
+      "Laziness & Wrong Information: If students only copy ChatGPT answers, they stop thinking. AI can also generate false information (hallucinations). Blind trust = wrong learning.",
+      "Academic Cheating: While rates haven't skyrocketed, methods have evolved. It becomes: students use AI to write, teachers use AI to detect. But the real solution is teaching honesty, not just catching cheaters.",
+      "Inequality: Students with good devices and AI tools will move ahead. Those without fall further behind. This creates a bigger educational gap between rich and poor."
     ],
     image: "https://images.unsplash.com/photo-1509822929063-6b6cfc9b42f2?q=80&w=1920&auto=format&fit=crop",
     layout: 'hologram',
     accent: 'pink'
   },
-  // Q4: Future Skills
   {
-    id: 11,
-    title: "CRITICAL THINKING",
-    subtitle: "INTERACTION_MODE // FUTURE SKILLS",
+    id: 10,
+    title: "THE KEY QUESTION",
+    subtitle: "What Skills Matter Most?",
     content: [
-      "THE SHIFT:",
-      "\"In this new AI era, which skill matters more?\"",
-      "A: The ability to answer every question correctly.",
-      "B: The ability to ask the right questions."
+      "In this new AI era, which skill matters more?",
+      "Option A: The ability to answer every question correctly.",
+      "Option B: The ability to ask the right questions.",
+      "The answer reveals where education is heading."
     ],
     image: "https://images.unsplash.com/photo-1558494949-ef526b0042a0?q=80&w=1920&auto=format&fit=crop",
     layout: 'interaction',
     accent: 'amber'
   },
   {
-    id: 12,
-    title: "PREDICTIVE MODEL",
-    subtitle: "TIMEFRAME: 3-5 YEARS",
+    id: 11,
+    title: "THE FUTURE OF EDUCATION",
+    subtitle: "What Happens in 3-5 Years",
     content: [
-      "DEMOCRATIZATION: AI Tutors for 100% of population.",
-      "ASSESSMENT: Continuous biometric/data evaluation.",
-      "ROLE SHIFT: Teachers evolve into Mentors.",
-      "GOAL: Human Connection + Machine Efficiency."
+      "AI Tutors for Everyone: Every student will have a personal AI tutor available 24/7—a privilege once only for the wealthy.",
+      "Goodbye to Survival Exams: No more high-stress final exams. AI evaluates continuously, making learning a steady process, not one big test.",
+      "Teachers Become Mentors: AI can teach information, but it cannot teach values, character, or empathy. Teachers will become guides, motivators, and emotional supporters.",
+      "The Bottom Line: The future is not Humans versus AI. It is Humans working with AI—creating education that is more humane and effective than ever."
     ],
     image: "https://images.unsplash.com/photo-1535378437327-10111f74ecaf?q=80&w=1920&auto=format&fit=crop",
     layout: 'focus',
     accent: 'cyan'
   },
-  // Q2: Human vs AI
   {
-    id: 13,
+    id: 12,
     title: "THE ULTIMATE CHOICE",
-    subtitle: "INTERACTION_MODE // SELECTION",
+    subtitle: "A Thought Experiment",
     content: [
-      "HYPOTHESIS:",
-      "\"If you had to choose a tutor for the next month, who would you pick?\"",
-      "OPTION 1: An all-knowing AI, available 24/7, zero emotion.",
-      "OPTION 2: A passionate human teacher, available only 1 hour/week."
+      "If you had to choose a tutor for the next month, who would you pick?",
+      "Option 1: An all-knowing AI that is available 24/7 but has zero emotion.",
+      "Option 2: A passionate human teacher who is only free for one hour a week.",
+      "Your answer reveals what education needs most."
     ],
     image: "https://images.unsplash.com/photo-1616161560417-66d4db589379?q=80&w=1920&auto=format&fit=crop",
     layout: 'interaction',
     accent: 'amber'
   },
   {
-    id: 14,
-    title: "CONCLUSION",
-    subtitle: "FINAL DIRECTIVE",
+    id: 13,
+    title: "THREE POINTS TO REMEMBER",
+    subtitle: "The Conclusion",
     content: [
-      "STATUS: Ubiquitous (86% Schools).",
-      "NATURE: High Risk / High Reward.",
-      "STRATEGY: Symbiosis. Not Replacement.",
-      "EQUATION: Human + AI > Human."
+      "First: AI is changing education right now—not in some distant future. This is not coming; it is here.",
+      "Second: AI brings huge opportunities AND real risks. The most important thing is how we choose to use it—wisely or carelessly.",
+      "Third: The future is not 'AI replacing humans,' but 'humans and AI working together.' Teachers will evolve into mentors. Students will think better with AI support. Education will be fundamentally improved."
     ],
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop",
     layout: 'hero',
     accent: 'purple'
   },
   {
-    id: 15,
-    title: "SESSION TERMINATED",
-    subtitle: "INITIATE Q&A PROTOCOL",
+    id: 14,
+    title: "THE FUTURE IS HUMAN + AI",
+    subtitle: "Not Versus. Together.",
     content: [
-      "\"The future is not about replacing teachers.\"",
-      "\"It is about reaching new heights together.\"",
-      "THANK YOU"
+      "The future of education is not Humans versus AI.",
+      "It is Humans plus AI—and that is stronger than either one standing alone.",
+      "Thank you for your time and attention."
     ],
     image: "https://images.unsplash.com/photo-1617791160505-6f00504e3519?q=80&w=1920&auto=format&fit=crop",
     layout: 'hero',
@@ -258,5 +237,10 @@ Second: AI brings huge opportunities but also real risks.
 Opportunities: faster learning, better memory, increased confidence, more accessible education.
 Risks: potential cheating, misinformation, privacy concerns, digital inequality. The key is how we choose to use this technology. We can use it wisely, or we can use it foolishly.
 Third: The future is not 'AI replacing humans,' but 'humans and AI working together.' Teachers will not disappear. They will evolve. They will stop being information deliverers and start being mentors. Students will not stop thinking. They will think better because AI helps them. Education will not be destroyed. It will be fundamentally improved.
-The future of education is not Humans versus AI. It is Humans plus AI—and that is stronger than either one standing alone.”
+The future of education is not Humans versus AI. It is Humans plus AI—and that is stronger than either one standing alone.
+
+SOURCES:
+• 86% Student AI Usage: Digital Education Council (2024) - "Global AI Student Survey"
+• Duolingo Efficacy: Students reach university-level proficiency in half the time using AI-adaptive learning
+• Academic Cheating: Stanford University (2023) - Cheating rates remain steady despite new AI tools
 `;
