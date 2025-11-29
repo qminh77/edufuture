@@ -132,12 +132,12 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
             className="grid gap-3 sm:gap-6"
           >
               {data.content.map((item, i) => (
-                  <motion.div key={i} variants={itemVariants} className="flex items-center gap-2 sm:gap-4 group">
-                      <span className={`font-mono text-xs sm:text-lg ${getTailwindColor().split(' ')[0]}`}>
+                  <motion.div key={i} variants={itemVariants} className="flex items-start gap-2 sm:gap-4 group">
+                      <span className={`font-mono text-xs sm:text-base shrink-0 ${getTailwindColor().split(' ')[0]}`}>
                         {String(i + 1).padStart(2, '0')}
                       </span>
-                      <div className="h-full w-[1px] bg-slate-600 group-hover:bg-slate-400 transition-colors" />
-                      <p className="font-sans text-sm sm:text-lg md:text-xl text-slate-200 group-hover:text-white transition-colors">
+                      <div className="h-full w-[1px] bg-slate-600 group-hover:bg-slate-400 transition-colors mt-1" />
+                      <p className="font-sans text-xs sm:text-sm md:text-base text-slate-200 group-hover:text-white transition-colors leading-relaxed">
                         {item}
                       </p>
                   </motion.div>
@@ -206,7 +206,7 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
                     <div className={`absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-${data.accent === 'cyan' ? 'neon-cyan' : 'neon-purple'} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                     <div className="flex items-start gap-2 sm:gap-4">
                         <Target className={`mt-1 shrink-0 w-4 h-4 sm:w-5 sm:h-5 ${getTailwindColor().split(' ')[0]}`} />
-                        <p className="font-sans text-xs sm:text-lg md:text-lg text-slate-100 font-medium">{item}</p>
+                        <p className="font-sans text-xs sm:text-sm md:text-base text-slate-100 font-medium leading-snug">{item}</p>
                     </div>
                 </motion.div>
             ))}
@@ -240,10 +240,10 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
                </h1>
            </motion.div>
 
-           <motion.div variants={containerVariants} initial="hidden" animate="visible" className="z-10 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-5xl bg-black/40 backdrop-blur-sm p-6 rounded-lg border-l-4 border-neon-cyan">
+           <motion.div variants={containerVariants} initial="hidden" animate="visible" className="z-10 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 max-w-5xl bg-black/40 backdrop-blur-sm p-4 sm:p-6 rounded-lg border-l-4 border-neon-cyan">
                {data.content.map((item, i) => (
                    <motion.div key={i} variants={itemVariants} className="pl-2 py-2">
-                       <p className="font-sans text-xl text-slate-100 font-medium">
+                       <p className="font-sans text-sm sm:text-base md:text-lg text-slate-100 font-medium leading-snug">
                            {item}
                        </p>
                    </motion.div>

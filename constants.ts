@@ -43,11 +43,11 @@ export const PRESENTATION_DATA: SlideData[] = [
     title: "WHAT IS AI IN EDUCATION?",
     subtitle: "Five Key Capabilities",
     content: [
-      "Understands How You Learn: Tracks what you do right, what you struggle with, and your progress speed.",
-      "Personalizes Content: Adjusts difficulty and topics based on your ability and learning style.",
-      "Provides Instant Feedback: Corrects mistakes immediately—not tomorrow, but right now.",
-      "Auto-Adjusts Difficulty: Changes the level as you improve.",
-      "Available 24/7: Never tired, never too busy, always ready to help."
+      "✓ Understands How You Learn",
+      "✓ Personalizes Content",
+      "✓ Provides Instant Feedback",
+      "✓ Auto-Adjusts Difficulty",
+      "✓ Available 24/7 Support"
     ],
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1920&auto=format&fit=crop",
     layout: 'hologram',
@@ -58,10 +58,10 @@ export const PRESENTATION_DATA: SlideData[] = [
     title: "FOUR REVOLUTIONARY CHANGES",
     subtitle: "How AI is Transforming Learning",
     content: [
-      "Personalization: Instead of 'one textbook for everyone,' AI creates a unique path for each person. Excel in a subject? Learn advanced topics. Need help? Review the basics.",
-      "Learning On Demand: Study at midnight, on the bus, or anywhere. No more time or geography barriers.",
-      "Instant Feedback: Mistakes are corrected immediately while the knowledge is still fresh.",
-      "Gamification: Learning becomes engaging and fun with game mechanics to keep you motivated."
+      "Personalization: Unique path for each learner",
+      "Learning On Demand: Study anywhere, anytime",
+      "Instant Feedback: Correct errors immediately",
+      "Gamification: Make learning fun & engaging"
     ],
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1920&auto=format&fit=crop",
     layout: 'focus',
@@ -84,10 +84,10 @@ export const PRESENTATION_DATA: SlideData[] = [
     title: "THE REAL BENEFITS",
     subtitle: "What AI Learning Actually Delivers",
     content: [
-      "For Learners: We learn faster because AI skips what we already know. We remember longer through smart review reminders. Most importantly—we feel more confident. You can ask AI the same question 100 times without judgment or embarrassment.",
-      "For Society: Students in poor or remote areas finally access high-quality education they never had before.",
-      "For Teachers: No more endless grading. Teachers can focus on what truly matters: inspiring and guiding students.",
-      "The Proof: Duolingo research shows students reach university-level proficiency in half the time using AI-adaptive learning."
+      "For Learners: Learn faster, remember longer, feel confident",
+      "For Society: Equal access to quality education",
+      "For Teachers: Focus on inspiring, not grading",
+      "Proof: Duolingo shows 50% faster learning"
     ],
     stat: "50% FASTER",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920&auto=format&fit=crop",
@@ -111,9 +111,9 @@ export const PRESENTATION_DATA: SlideData[] = [
     title: "THE RISKS WE CAN'T IGNORE",
     subtitle: "Three Major Concerns",
     content: [
-      "Laziness & Wrong Information: If students only copy ChatGPT answers, they stop thinking. AI can also generate false information (hallucinations). Blind trust = wrong learning.",
-      "Academic Cheating: While rates haven't skyrocketed, methods have evolved. It becomes: students use AI to write, teachers use AI to detect. But the real solution is teaching honesty, not just catching cheaters.",
-      "Inequality: Students with good devices and AI tools will move ahead. Those without fall further behind. This creates a bigger educational gap between rich and poor."
+      "⚠ Laziness & Wrong Info: Blind trust = wrong learning",
+      "⚠ Academic Cheating: Tools for writing, tools for detecting",
+      "⚠ Inequality: Rich move ahead, poor fall behind"
     ],
     image: "https://images.unsplash.com/photo-1509822929063-6b6cfc9b42f2?q=80&w=1920&auto=format&fit=crop",
     layout: 'hologram',
@@ -138,10 +138,10 @@ export const PRESENTATION_DATA: SlideData[] = [
     title: "THE FUTURE OF EDUCATION",
     subtitle: "What Happens in 3-5 Years",
     content: [
-      "AI Tutors for Everyone: Every student will have a personal AI tutor available 24/7—a privilege once only for the wealthy.",
-      "Goodbye to Survival Exams: No more high-stress final exams. AI evaluates continuously, making learning a steady process, not one big test.",
-      "Teachers Become Mentors: AI can teach information, but it cannot teach values, character, or empathy. Teachers will become guides, motivators, and emotional supporters.",
-      "The Bottom Line: The future is not Humans versus AI. It is Humans working with AI—creating education that is more humane and effective than ever."
+      "AI Tutors for Everyone (24/7 available)",
+      "No More Survival Exams (continuous evaluation)",
+      "Teachers Become Mentors (inspire, not lecture)",
+      "Human + AI = Better Education"
     ],
     image: "https://images.unsplash.com/photo-1535378437327-10111f74ecaf?q=80&w=1920&auto=format&fit=crop",
     layout: 'focus',
@@ -166,9 +166,9 @@ export const PRESENTATION_DATA: SlideData[] = [
     title: "THREE POINTS TO REMEMBER",
     subtitle: "The Conclusion",
     content: [
-      "First: AI is changing education right now—not in some distant future. This is not coming; it is here.",
-      "Second: AI brings huge opportunities AND real risks. The most important thing is how we choose to use it—wisely or carelessly.",
-      "Third: The future is not 'AI replacing humans,' but 'humans and AI working together.' Teachers will evolve into mentors. Students will think better with AI support. Education will be fundamentally improved."
+      "1. AI is changing education right now—not in the future",
+      "2. AI brings opportunities AND risks—how we use it matters",
+      "3. Future: Humans + AI working together, not against each other"
     ],
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop",
     layout: 'hero',
