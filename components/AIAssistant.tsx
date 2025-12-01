@@ -8,9 +8,15 @@ import { AI_CONTEXT } from '../constants';
 // Additional training content provided by user (used as reference material)
 const ADDITIONAL_AI_KNOWLEDGE = `AI IS CHANGING THE WAY HUMANS LEARN
 1. Introduction
-"Hello everyone. I would like to start with a question: Why is it that in the same class, with the same teacher, some students do well while others struggle? The reason is very simple: everyone learns at a different speed and in a different way. Twenty years ago, that was just the reality of education—everyone learned the same way. But today, AI is completely changing that.
-Why is this important right now? According to the Digital Education Council’s 2024 Global Survey, 86% of students are already using AI in their studies. The market is booming, projected to grow rapidly in recent years.
-AI is not the future; it is the present. Today, I will show you four ways AI is changing how we learn, the real benefits, the risks we need to be careful about, and what the future of education will look like. Let’s explore this together."
+"Hello everyone, welcome to our group’s presentation. Today, I’m very happy to stand here and talk to you about a topic that has become extremely familiar in our modern world. I think all of you have heard about it, and some of you may even use it every day. It’s AI — Artificial Intelligence.
+
+AI has grown so quickly that it now appears in almost every aspect of life. And among all those areas, one field that is changing the most is education. Because of that, we decided to choose the topic “AI in Education” for our presentation today.
+
+So in this presentation, we will take a closer look at two main things:
+First, what exactly AI in education means — how this technology is being used in learning.
+And second, the pros and cons that come with it — the positive impacts AI brings, as well as the challenges or problems it may create.
+
+Through this topic, we hope you will gain a clearer and more balanced understanding of how AI is shaping the future of education. Now, let’s begin our presentation."
 
 2. What is AI in Education?
 "So, what is AI in education? Simply put, it is a smart system that can do five things:
