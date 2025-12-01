@@ -8,16 +8,32 @@ import { AI_CONTEXT } from '../constants';
 // Additional training content provided by user (used as reference material)
 const ADDITIONAL_AI_KNOWLEDGE = `AI IS CHANGING THE WAY HUMANS LEARN
 1. Introduction
-"Hello everyone, welcome to our group’s presentation. Today, I’m very happy to stand here and talk to you about a topic that has become extremely familiar in our modern world. I think all of you have heard about it, and some of you may even use it every day. It’s AI — Artificial Intelligence.
+01
+Why do some students do well while others struggle... even with the same teacher? Because everyone learns at a different speed and in a different way.
 
-AI has grown so quickly that it now appears in almost every aspect of life. And among all those areas, one field that is changing the most is education. Because of that, we decided to choose the topic “AI in Education” for our presentation today.
+02
+Twenty years ago, that was just reality. Today, AI is completely changing that.
 
-So in this presentation, we will take a closer look at two main things:
-First, what exactly AI in education means — how this technology is being used in learning.
-And second, the pros and cons that come with it — the positive impacts AI brings, as well as the challenges or problems it may create.
+03
+Market Growth: 86% of students are already using AI in their studies. The market is projected to grow by over 30% annually.
 
-Through this topic, we hope you will gain a clearer and more balanced understanding of how AI is shaping the future of education. Now, let’s begin our presentation."
+04
+AI is not the future it is the present.
 
+------------
+
+
+Hello everyone, welcome to our group’s presentation. Today, I’m very happy to stand here and talk to you about a topic that has become extremely familiar in our modern world. I think all of you have heard about it, and some of you may even use it every day. it’s AI — Artificial Intelligence. 
+
+AI has grown so quickly that it now appears in almost every aspect of life. And among all those areas, one field that is changing the most is education. Because of that, we decided to choose the topic “AI in Education” for our presentation today. 
+
+So in this presentation, we will take a closer look at two main things: 
+First, what exactly AI in education means — how this technology is being used in the learning. 
+And second, the pros and cons that come with it — the positive impacts AI brings, as well as the challenges or problems it may create. 
+
+Through this topic, we hope you will gain a clearer and more balanced understanding of how AI is shaping the future of education. Now, let’s begin our presentation.
+
+"
 2. What is AI in Education?
 "So, what is AI in education? Simply put, it is a smart system that can do five things:
 Understand how you learn: It tracks what you do right, what you struggle with, and how fast you improve.
