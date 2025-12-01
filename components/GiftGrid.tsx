@@ -6,8 +6,6 @@ interface GiftGridProps {
   startIndex?: number; // which index in links to start from
 }
 
-const GIFT_BOX_IMG = 'https://images.unsplash.com/photo-1606813902776-0a6ad9f1d8b7?q=80&w=400&auto=format&fit=crop';
-
 const GiftGrid: React.FC<GiftGridProps> = ({ links, startIndex = 5 }) => {
   const items = links.slice(startIndex, startIndex + 5);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -39,7 +37,12 @@ const GiftGrid: React.FC<GiftGridProps> = ({ links, startIndex = 5 }) => {
               aria-label={`Open gift ${i + 1}`}
             >
               <div className="text-center">
-                <img src={GIFT_BOX_IMG} alt="gift" className="w-14 h-14 object-cover rounded-md" />
+                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-14 h-14 mx-auto">
+                  <rect x="2" y="7" width="20" height="13" rx="2" fill="#FFD166"/>
+                  <path d="M2 10h20" stroke="#E76F51" strokeWidth="1.2"/>
+                  <path d="M12 3c1.657 0 3 1.343 3 3 0 .28-.042.548-.12.795L12 9 9.12 6.795A3.001 3.001 0 0 1 12 3z" fill="#E76F51"/>
+                  <path d="M12 3c-1.657 0-3 1.343-3 3 0 .28.042.548.12.795L12 9l2.88-2.205A3.001 3.001 0 0 0 12 3z" fill="#F4A261"/>
+                </svg>
                 <div className="text-xs mt-1 text-slate-300">Gift {startIndex + i + 1}</div>
               </div>
             </button>

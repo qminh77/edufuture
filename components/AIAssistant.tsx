@@ -5,6 +5,58 @@ import { GoogleGenAI, Chat } from "@google/genai";
 import { MessageSquare, X, Send, Bot, Loader2, Minimize2 } from 'lucide-react';
 import { AI_CONTEXT } from '../constants';
 
+// Additional training content provided by user (used as reference material)
+const ADDITIONAL_AI_KNOWLEDGE = `AI IS CHANGING THE WAY HUMANS LEARN
+1. Introduction
+"Hello everyone. I would like to start with a question: Why is it that in the same class, with the same teacher, some students do well while others struggle? The reason is very simple: everyone learns at a different speed and in a different way. Twenty years ago, that was just the reality of education—everyone learned the same way. But today, AI is completely changing that.
+Why is this important right now? According to the Digital Education Council’s 2024 Global Survey, 86% of students are already using AI in their studies. The market is booming, projected to grow rapidly in recent years.
+AI is not the future; it is the present. Today, I will show you four ways AI is changing how we learn, the real benefits, the risks we need to be careful about, and what the future of education will look like. Let’s explore this together."
+
+2. What is AI in Education?
+"So, what is AI in education? Simply put, it is a smart system that can do five things:
+Understand how you learn: It tracks what you do right, what you struggle with, and how fast you improve.
+Personalize content: It adjusts based on your own ability and learning style.
+Instant feedback: It corrects you immediately—not tomorrow, but right now.
+Auto-adjust difficulty: It changes the level as you get better.
+Support 24/7: It never gets tired, never complains, and is never too busy.
+In other words, AI is like a smart tutor that is always ready to help you."
+
+3. How AI is Transforming Learning (Main Body)
+The 4 Core Changes
+"Personalization: Instead of 'one textbook for everyone,' AI designs a unique path for each person. If you are good, you learn advanced topics. If you are weak, you review the basics.
+Learning on Demand: You can learn at midnight or on the bus. All barriers of time and geography are removed.
+Instant Feedback: If you make a mistake, AI corrects it immediately. You fix the error while the knowledge is still fresh.
+Gamification: It turns boring learning into exciting games to keep you motivated."
+
+4. Benefits of AI in Learning
+"For learners: We learn faster because AI removes the topics we already know. We remember longer because it reminds us to review at the right time. And most importantly, we feel more confident—AI lets us ask the same question a hundred times without any judgment.
+For society: AI gives students in poor or remote areas access to high-quality knowledge that they never had before.
+For teachers: AI takes care of grading and repetitive tasks, so teachers can focus on what truly matters: inspiring and guiding their students.
+Research: A Duolingo report showed students using an AI platform reached similar proficiency in half the time."
+
+5. Risks and Concerns
+"Laziness & Wrong Information: If students only copy ChatGPT, they stop thinking. AI can also generate wrong information, so blind trust leads to wrong learning.
+Academic Cheating: Methods have evolved; the solution is teaching honesty, not only catching cheaters.
+Inequality: Those with better devices and AI access may advance faster, widening gaps.
+In short: The problem isn’t AI. It’s how people choose to use it."
+
+6. The Future of Learning with AI
+"Predictions for 3–5 years:
+AI Tutors for Everyone — personal AI tutors anytime.
+No More High-Stress Finals — continuous evaluation.
+Teachers Become Mentors — focusing on values, empathy, and guidance.
+Conclusion: The future is Humans + AI working together."
+
+Additional statistics & sources provided by the presenter (use these when citing):
+- Market size: "AI in education market reached USD 7.57 billion in 2025 (year-over-year growth ~46%)" — Mentioned in presentation (no direct external URL provided by presenter).
+- ChatGPT usage: "92% of university students have used ChatGPT" — Mentioned in presentation (no direct external URL provided by presenter).
+- Digital Education Council (2024) — "Global AI Student Survey": 86% of schools/students use AI in learning. Link: https://www.digitaleducationcouncil.com
+- Duolingo Efficacy / Duolingo Research Report — adaptive-learning efficacy (students reached similar proficiency in ~half the time). Link: https://blog.duolingo.com/duolingo-efficacy-research/
+- Stanford University (2023) — research noting cheating rates remain steady despite new AI tools (used as a source in the presentation materials). Link: https://ed.stanford.edu/news/cheating-age-ai
+
+Note on conflicting claims:
+The presentation mentions both a claim that "cheating rates increased by 400%" (in the Risks section) and a Stanford (2023) study that reports cheating rates stayed roughly steady. When presenting these findings, the assistant should surface the discrepancy, show both sources, and explain possible reasons for differing results (different populations, timeframes, definitions of "cheating", or measurement methods).
+`;
 interface Message {
   role: 'user' | 'model';
   text: string;
@@ -35,6 +87,14 @@ const AIAssistant: React.FC = () => {
             
             You have access to the following presentation content about "AI in Education: The Future is Now":
             ${AI_CONTEXT}
+
+            You also have the following additional reference material provided by the presenter. When users ask about AI in education, learning strategies, benefits, risks, or future predictions, draw on these points where relevant:
+            ${ADDITIONAL_AI_KNOWLEDGE}
+
+            Citation & Sourcing Rules:
+            - When referencing a statistic or claim from the presentation or the additional material, include a short inline citation (source name and URL) when available.
+            - Prefer the links supplied by the presenter. If a claim lacks a direct URL, state that the presenter provided the claim and offer to verify with a web search.
+            - If multiple sources disagree, explicitly state the discrepancy, show both sources, and explain plausible reasons for the difference (population, timeframe, or methodology).
 
             Your Advanced Capabilities:
             1. PRIMARY: Answer questions about the presentation content thoroughly and accurately.
@@ -88,14 +148,50 @@ const AIAssistant: React.FC = () => {
     try {
       const result = await chatSession.sendMessage({ message: userMsg });
       let responseText = result.text;
-      
-      // Remove markdown formatting (**, *, #, etc.)
-      responseText = responseText
-        .replace(/\*\*(.+?)\*\*/g, '$1')  // Remove bold **text**
-        .replace(/\*(.+?)\*/g, '$1')      // Remove italic *text*
-        .replace(/^#+\s+/gm, '')            // Remove headers
-        .replace(/\n- /g, '\n• ')          // Convert - to •
-        .trim();
+
+      // Robustly sanitize Markdown and common formatting so chat shows plain text.
+      const sanitize = (text: string) => {
+        if (!text) return text;
+        let t = text;
+
+        // Remove fenced code blocks ``` ```
+        t = t.replace(/```[\s\S]*?```/g, '');
+
+        // Remove HTML tags if any
+        t = t.replace(/<[^>]+>/g, '');
+
+        // Convert image markdown ![alt](url) -> alt (url)
+        t = t.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '$1 ($2)');
+
+        // Convert links [text](url) -> text (url)
+        t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1 ($2)');
+
+        // Remove inline code `code`
+        t = t.replace(/`([^`]+)`/g, '$1');
+
+        // Remove bold/strong **text** or __text__
+        t = t.replace(/(\*\*|__)(.*?)\1/g, '$2');
+
+        // Remove emphasis *text* or _text_
+        t = t.replace(/(\*|_)(.*?)\1/g, '$2');
+
+        // Remove remaining heading markers
+        t = t.replace(/^#{1,6}\s*/gm, '');
+
+        // Convert list markers (-, *) at line start to bullets
+        t = t.replace(/^\s*[-*+]\s+/gm, '• ');
+
+        // Remove blockquote markers
+        t = t.replace(/^>\s?/gm, '');
+
+        // Collapse multiple blank lines
+        t = t.replace(/\n{3,}/g, '\n\n');
+
+        // Trim whitespace
+        return t.trim();
+      };
+
+      responseText = sanitize(responseText);
       
       setMessages(prev => [...prev, { role: 'model', text: responseText }]);
     } catch (error) {

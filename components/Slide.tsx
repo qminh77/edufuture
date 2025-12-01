@@ -365,10 +365,17 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
             {qrForThis && (
               <button
                 onClick={() => { incrementGiftCount(rewardIndexForSlide); openGift(qrForThis); }}
-                className="absolute top-4 right-4 bg-black/60 p-2 rounded-full border border-slate-700 hover:scale-110 transform transition z-30"
+                className="absolute top-4 right-4 bg-black/60 p-2 rounded-full border border-slate-700 hover:scale-110 transform transition z-30 flex items-center justify-center"
                 aria-label="Open gift"
+                title="Open gift"
               >
-                <img src="https://images.unsplash.com/photo-1606813902776-0a6ad9f1d8b7?q=80&w=80&auto=format&fit=crop" alt="gift" className="w-6 h-6 object-cover rounded" />
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-5 h-5">
+                  <path d="M20 12v7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7" stroke="#FFD166" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M3 10h18v2H3z" fill="#F4A261"/>
+                  <path d="M12 3c1.657 0 3 1.343 3 3 0 .28-.042.548-.12.795L12 9 9.12 6.795A3.001 3.001 0 0 1 12 3z" fill="#E76F51"/>
+                  <path d="M12 3c-1.657 0-3 1.343-3 3 0 .28.042.548.12.795L12 9l2.88-2.205A3.001 3.001 0 0 0 12 3z" fill="#F4A261"/>
+                  <path d="M7 10v4" stroke="#264653" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </button>
             )}
              {/* Header */}
@@ -459,7 +466,12 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
                 className="absolute top-4 right-4 bg-black/60 p-2 rounded-full border border-slate-700 hover:scale-110 transform transition z-30"
                 aria-label="Open gift"
               >
-                <img src="https://images.unsplash.com/photo-1606813902776-0a6ad9f1d8b7?q=80&w=80&auto=format&fit=crop" alt="gift" className="w-6 h-6 object-cover rounded" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
+                  <rect x="2" y="7" width="20" height="13" rx="2" fill="#FFD166"/>
+                  <path d="M2 10h20" stroke="#E76F51" strokeWidth="0.9"/>
+                  <path d="M12 3c1.657 0 3 1.343 3 3 0 .28-.042.548-.12.795L12 9 9.12 6.795A3.001 3.001 0 0 1 12 3z" fill="#E76F51"/>
+                  <path d="M12 3c-1.657 0-3 1.343-3 3 0 .28.042.548.12.795L12 9l2.88-2.205A3.001 3.001 0 0 0 12 3z" fill="#F4A261"/>
+                </svg>
               </button>
             )}
              {/* Hazard Header */}
