@@ -19,7 +19,7 @@ export const PRESENTATION_DATA: SlideData[] = [
       "Why do some students do well while others struggle... even with the same teacher? Because everyone learns at a different speed and in a different way.",
       "Twenty years ago, that was just reality. Today, AI is completely changing that.",
       "Market Growth: 86% of students are already using AI in their studies. The market is projected to grow by over 30% annually.",
-      "AI is not the future—it is the present."
+      "AI is not the future it is the present."
     ],
     stat: "86%",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1920&auto=format&fit=crop",
@@ -161,8 +161,8 @@ export const PRESENTATION_DATA: SlideData[] = [
     title: "THREE POINTS TO REMEMBER",
     subtitle: "The Conclusion",
     content: [
-      "1. AI is changing education right now—not in the future",
-      "2. AI brings opportunities AND risks—how we use it matters",
+      "1. AI is changing education right now not in the future",
+      "2. AI brings opportunities AND risks how we use it matters",
       "3. Future: Humans + AI working together, not against each other"
     ],
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop",
@@ -175,7 +175,7 @@ export const PRESENTATION_DATA: SlideData[] = [
     subtitle: "Not Versus. Together.",
     content: [
       "The future of education is not Humans versus AI.",
-      "It is Humans plus AI—and that is stronger than either one standing alone.",
+      "It is Humans plus AI and that is stronger than either one standing alone.",
       "Thank you for your time and attention."
     ],
     image: "https://images.unsplash.com/photo-1617791160505-6f00504e3519?q=80&w=1920&auto=format&fit=crop",
@@ -184,19 +184,46 @@ export const PRESENTATION_DATA: SlideData[] = [
   }
 ];
 
+// QR links for rewards (first 5 mapped to interactive questions, next 5 shown in Q&A gifts)
+export const QR_LINKS = [
+  'https://chatgpt.com/p/Q7XDRVFELWS75W38',
+  'https://chatgpt.com/p/JVNGNU9XZCNPGE4X',
+  'https://chatgpt.com/p/XARKNDF7TVCZ3FR7',
+  'https://chatgpt.com/p/74UB3D6BVMX65RHG',
+  'https://chatgpt.com/p/8K7W33454LV3KCFH',
+  'https://chatgpt.com/p/ECLARYGQDRMLDEAF',
+  'https://chatgpt.com/p/Q5CS6KJUPB44CH4X',
+  'https://chatgpt.com/p/2R2RMLBUUZNQVLWM',
+  'https://chatgpt.com/p/75LJMQVBU6FM2PZH',
+  'https://chatgpt.com/p/NFKXQV3UX8XXESZX'
+];
+
+// Optional: Add a Q&A slide that displays the last 5 gifts as boxes
+PRESENTATION_DATA.push({
+  id: 15,
+  title: 'Q&A GIFTS',
+  subtitle: 'Open a gift to reveal a special resource',
+  content: [
+    'Five surprise gifts for the Q&A — click any box to reveal the QR code.'
+  ],
+  image: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1920&auto=format&fit=crop',
+  layout: 'hologram',
+  accent: 'purple'
+});
+
 export const AI_CONTEXT = `
 AI in Education: The Future is Now
 🔹 1. Introduction
 “Hello everyone. I would like to start with a question: Why is it that in the same class, with the same teacher, some students do well while others struggle? The reason is very simple: everyone learns at a different speed and in a different way.
-Twenty years ago, that was just the reality of education—everyone learned the same way. But today, AI is completely changing that.
-Why is this important right now? In 2025, the AI in education market reached $7.57 billion—an increase of 46% in just one year. 92% of college students have used ChatGPT. 86% of schools are using AI.
+Twenty years ago, that was just the reality of education everyone learned the same way. But today, AI is completely changing that.
+Why is this important right now? In 2025, the AI in education market reached $7.57 billion an increase of 46% in just one year. 92% of college students have used ChatGPT. 86% of schools are using AI.
 AI is not the future; it is the present. Today, I will show you four ways AI is changing how we learn, the real benefits, the risks we need to be careful about, and what the future of education will look like.
 Let’s explore this together.”
 🔹 2. What is AI in Education?
 “So, what is AI in education? Simply put, it is a smart system that can do five things:
 Understand how you learn: It tracks what you do right, what you struggle with, and how fast you improve.
 Personalize content: It adjusts based on your own ability and learning style.
-Instant feedback: It corrects you immediately—not tomorrow, but right now.
+Instant feedback: It corrects you immediately not tomorrow, but right now.
 Auto-adjust difficulty: It changes the level as you get better.
 Support 24/7: It never gets tired, never complains, and is never too busy.
 In other words, AI is like a smart tutor that is always ready to help you.”
@@ -208,7 +235,7 @@ Instant Feedback: If you make a mistake, AI corrects it immediately. You fix the
 Gamification: It turns boring learning into exciting games to keep you motivated.”
 🔹 4. Benefits of AI in Learning
 Benefits & Proof (55 seconds) “What benefits do these changes bring?
-For learners: We will learn faster because we don't waste time on what we already know; we remember longer because AI reminds us to review at the right time; and especially, we are more confident—you can ask AI 100 times without fear of being judged or embarrassed.
+For learners: We will learn faster because we don't waste time on what we already know; we remember longer because AI reminds us to review at the right time; and especially, we are more confident you can ask AI 100 times without fear of being judged or embarrassed.
 For society: It helps poor people in remote areas access top-quality knowledge.
 For teachers: They are freed from grading papers so they can focus on inspiring students.
 What is the real result? A study from Duolingo showed that learning with an AI adaptive model improves efficiency by 40% compared to a traditional classroom. That number speaks for itself!”
@@ -227,12 +254,12 @@ Conclusion: The future is not AI versus Humans. The future is Humans plus AI. An
 🔹 7. Conclusion
 📌 CONCLUSION (1.5 minutes) Three Main Points to Remember
 “As I close this talk, I want you to remember three essential points:
-First: AI is changing education right now, not in some distant future. 86% of schools are already using AI. 92% of students are using it. This is not coming—it is here. This is our current reality.
+First: AI is changing education right now, not in some distant future. 86% of schools are already using AI. 92% of students are using it. This is not coming it is here. This is our current reality.
 Second: AI brings huge opportunities but also real risks.
 Opportunities: faster learning, better memory, increased confidence, more accessible education.
 Risks: potential cheating, misinformation, privacy concerns, digital inequality. The key is how we choose to use this technology. We can use it wisely, or we can use it foolishly.
 Third: The future is not 'AI replacing humans,' but 'humans and AI working together.' Teachers will not disappear. They will evolve. They will stop being information deliverers and start being mentors. Students will not stop thinking. They will think better because AI helps them. Education will not be destroyed. It will be fundamentally improved.
-The future of education is not Humans versus AI. It is Humans plus AI—and that is stronger than either one standing alone.
+The future of education is not Humans versus AI. It is Humans plus AI and that is stronger than either one standing alone.
 
 SOURCES:
 • 86% Student AI Usage: Digital Education Council (2024) - "Global AI Student Survey"

@@ -1,8 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 import { SlideData } from '../types';
 import { Target, Activity, Zap, Cpu, Code2, Globe, HelpCircle, AlertTriangle, Users } from 'lucide-react';
+import GiftGrid from './GiftGrid';
+import { QR_LINKS } from '../constants';
 
 interface SlideProps {
   data: SlideData;
@@ -211,6 +213,12 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
                 </motion.div>
             ))}
         </div>
+        {/* If this is the Q&A gifts slide (id 15), render the GiftGrid showing links 6-10 */}
+        {data.id === 15 && (
+          <div className="w-full mt-8">
+            <GiftGrid links={QR_LINKS} startIndex={5} />
+          </div>
+        )}
     </div>
   );
 
@@ -318,6 +326,13 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
     // Everything else are options
     const options = data.content.slice(0, data.content.length - 1);
 
+    const [answered, setAnswered] = useState(false);
+    const [showQRModal, setShowQRModal] = useState(false);
+
+    const rewardIndexForSlide = { 10: 0, 12: 1, 3: 2, 6: 3, 8: 4 }[data.id as number];
+
+    const qrForThis = typeof rewardIndexForSlide === 'number' ? QR_LINKS[rewardIndexForSlide] : null;
+
     return (
       <div className="flex items-center justify-center h-full w-full relative z-20 px-4">
          {/* Background Pulse Effect */}
@@ -356,7 +371,8 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
                            initial={{ opacity: 0, y: 20 }}
                            animate={{ opacity: 1, y: 0 }}
                            transition={{ delay: 0.3 + (i * 0.15) }}
-                           className={`border-2 ${getTailwindColor().split(' ')[1].replace('text', 'border')} bg-slate-900/60 p-6 md:p-8 rounded-lg text-left hover:bg-slate-800 transition-all cursor-default group`}
+                           onClick={() => setAnswered(true)}
+                           className={`border-2 ${getTailwindColor().split(' ')[1].replace('text', 'border')} bg-slate-900/60 p-6 md:p-8 rounded-lg text-left hover:bg-slate-800 transition-all cursor-pointer group`}
                          >
                              <p className="font-sans text-base md:text-xl text-slate-100 group-hover:text-white leading-relaxed">
                                  {opt}
@@ -364,6 +380,13 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
                          </motion.div>
                      ))}
                  </div>
+
+                 {/* If this slide has a reward mapped, show a gift button after answering */}
+                 {qrForThis && answered && (
+                   <div className="mt-6 flex items-center justify-center">
+                     <button onClick={() => setShowQRModal(true)} className="bg-neon-cyan text-black px-4 py-2 rounded font-bold">Open your gift 🎁</button>
+                   </div>
+                 )}
 
                  {/* Question at bottom */}
                  <motion.h2 
@@ -374,6 +397,18 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
                  >
                    {question}
                  </motion.h2>
+
+                {/* QR Modal */}
+                {showQRModal && qrForThis && (
+                  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
+                    <div className="bg-slate-900 p-4 rounded">
+                      <button onClick={() => setShowQRModal(false)} className="text-slate-300 mb-2">Close</button>
+                      <div className="p-2 bg-black/90 rounded">
+                        <img src={`https://api.qrserver.com/v1/create-qr-code/?size=420x420&data=${encodeURIComponent(qrForThis)}`} alt="QR" />
+                      </div>
+                    </div>
+                  </div>
+                )}
              </div>
          </motion.div>
       </div>
@@ -389,6 +424,12 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
     const prompt = data.content[0];
     const question = data.content[1];
     const options = data.content.slice(2);
+
+    const [answered, setAnswered] = useState(false);
+    const [showQRModal, setShowQRModal] = useState(false);
+
+    const rewardIndexForSlide = { 3: 2, 6: 3, 8: 4, 10: 0, 12: 1 }[data.id as number];
+    const qrForThis = typeof rewardIndexForSlide === 'number' ? QR_LINKS[rewardIndexForSlide] : null;
 
     return (
       <div className="flex items-center justify-center h-full w-full relative z-20 px-4">
@@ -448,7 +489,8 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
                                initial={{ opacity: 0, x: -20 }}
                                animate={{ opacity: 1, x: 0 }}
                                transition={{ delay: 0.8 + (i * 0.1) }}
-                               className={`border border-slate-700 bg-slate-800/50 p-6 rounded text-left hover:${data.accent === 'amber' ? 'border-neon-amber' : 'border-neon-cyan'} transition-colors cursor-default group`}
+                               onClick={() => setAnswered(true)}
+                               className={`border border-slate-700 bg-slate-800/50 p-6 rounded text-left hover:${data.accent === 'amber' ? 'border-neon-amber' : 'border-neon-cyan'} transition-colors cursor-pointer group`}
                              >
                                  <p className="font-sans text-lg md:text-xl text-slate-200 group-hover:text-white">
                                      {opt.replace(/^>>\s*|\[.*?\]:?\s*/g, '')}
@@ -456,6 +498,12 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
                              </motion.div>
                          ))}
                      </div>
+                 )}
+                 
+                 {qrForThis && answered && (
+                   <div className="mt-6 flex items-center justify-center">
+                     <button onClick={() => setShowQRModal(true)} className="bg-neon-cyan text-black px-4 py-2 rounded font-bold">Open your gift 🎁</button>
+                   </div>
                  )}
                  
                  {/* Footer Prompt */}
@@ -468,6 +516,16 @@ const Slide: React.FC<SlideProps> = ({ data }) => {
                          <span>AWAITING AUDIENCE RESPONSE...</span>
                      </motion.div>
                  )}
+                {showQRModal && qrForThis && (
+                  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
+                    <div className="bg-slate-900 p-4 rounded">
+                      <button onClick={() => setShowQRModal(false)} className="text-slate-300 mb-2">Close</button>
+                      <div className="p-2 bg-black/90 rounded">
+                        <img src={`https://api.qrserver.com/v1/create-qr-code/?size=420x420&data=${encodeURIComponent(qrForThis)}`} alt="QR" />
+                      </div>
+                    </div>
+                  </div>
+                )}
              </div>
          </motion.div>
       </div>
